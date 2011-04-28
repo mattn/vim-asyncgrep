@@ -5,18 +5,18 @@ Install(unix):
     # cd ~/.vim/bundle
     # git clone https://github.com/mattn/asyncgrep-vim.git
     # git clone https://github.com/ynkdir/vim-remote.git
-	# cd vim-remote/src
-	# make -f Makefile.x11
-	# cp vimremote ~/.vim/bundle/asyncgrep-vim/script/.
+    # cd vim-remote/src
+    # make -f Makefile.x11
+    # cp vimremote ~/.vim/bundle/asyncgrep-vim/script/.
 
 Install(windows):
 
     # cd %USERPROFILE%/vimfiles/bundle
     # git clone https://github.com/mattn/asyncgrep-vim.git
     # git clone https://github.com/ynkdir/vim-remote.git
-	# cd vim-remote/src
-	# mingw32-make -f Makefile.mingw (or nmake -f Makefile.msvc)
-	# copy vimremote.exe ..\..\asyncgrep-vim\script
+    # cd vim-remote/src
+    # mingw32-make -f Makefile.mingw (or nmake -f Makefile.msvc)
+    # copy vimremote.exe ..\..\asyncgrep-vim\script
 
 Usage:
 
@@ -26,5 +26,5 @@ Usage:
 Author:
 
     asyncgrep-vim: Yasuhiro Matsumoto
-	vim-remote:    Yukihiro Nakadaira
+    vim-remote:    Yukihiro Nakadaira
 
