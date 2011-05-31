@@ -6,6 +6,13 @@ use File::Basename;
 use IPC::Run qw(run);
 use JSON::PP;
 
+my $script = __FILE__;
+$script =~ s!\\!/!g;
+my $vimremote = dirname($script).'/vimremote';
+if ($script =~ /^\/[^\/]/) {
+    $vimremote = "/c/$vimremote";
+}
+
 my $server = shift;
 my $pattern = shift || '.';
 my $filemask = shift || '**/*';
@@ -28,7 +35,7 @@ for (glob($filemask)) {
         nr => 0, type => '', pattern => '', text => $text,
       });
       $json =~ s!\\"!\\x22!g;
-      my @cmd = (dirname(__FILE__).'/vimremote',
+      my @cmd = ($vimremote,
         '--servername', $server,
         '--remote-expr', "asyncgrep#add('$file',$json)");
       run \@cmd, '>', $^O eq 'MSWin32' ? 'NUL' : '/dev/null' or die $json;
